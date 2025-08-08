@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AGROINTELIGENTE - Sabanalarga</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #2e8b57;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 20px;
+      background: white;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2e8b57;
+    }
+    canvas {
+      max-width: 100%;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>AGROINTELIGENTE</h1>
+  <p>Transformando el agro en Sabanalarga y sus corregimientos</p>
+</header>
+
+<section>
+  <h2>¿Qué es AGROINTELIGENTE?</h2>
+  <p>
+    AGROINTELIGENTE es un proyecto digital diseñado para mejorar el comercio agrícola en Sabanalarga, Atlántico (Colombia), 
+    y sus corregimientos. Usamos herramientas tecnológicas para analizar el mercado, facilitar la compra y venta de productos 
+    agrícolas y conectar a productores con los mercados que más demandan sus productos.
+  </p>
+</section>
+
+<section>
+  <h2>Análisis de Mercado</h2>
+  <p>Este gráfico representa la demanda de productos agrícolas en la región:</p>
+  <canvas id="graficoDemanda" width="400" height="200"></canvas>
+</section>
+
+<section>
+  <h2>Compra y Venta de Productos</h2>
+  <p>
+    Desde esta plataforma, los agricultores pueden publicar sus productos y compradores pueden hacer pedidos directamente. 
+    También se publican los precios promedio para evitar intermediarios abusivos.
+  </p>
+</section>
+
+<section>
+  <h2>Mercados con Mayor Movimiento</h2>
+  <ul>
+    <li><strong>Sabanalarga (Cabecera)</strong> - Mayor punto de intercambio.</li>
+    <li><strong>La Peña</strong> - Envíos frecuentes de yuca y plátano.</li>
+    <li><strong>Molineros</strong> - Alto consumo de productos frescos.</li>
+    <li><strong>Mirador</strong> - Punto clave de distribución.</li>
+    <li><strong>Cascajal</strong> - Conectado con rutas de comercio.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2025 AGROINTELIGENTE - Desarrollado para el campo colombiano</p>
+</footer>
+
+<!-- Script para gráfico (usando Chart.js) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('graficoDemanda').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Yuca', 'Maíz', 'Plátano', 'Fríjol', 'Papa', 'Tomate'],
+      datasets: [{
+        label: 'Demanda en los mercados locales',
+        data: [80, 65, 90, 45, 60, 70],
+        backgroundColor: '#2e8b57'
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: { display: true, text: 'Nivel de demanda (%)' }
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
